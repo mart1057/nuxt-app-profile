@@ -1,21 +1,47 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Nuxt</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+  <div class="topnav">
+    <div class="navbar">
+      <div>
+        <nuxt-link to="/">Home</nuxt-link>
+        <nuxt-link to="/blog">Blog</nuxt-link>
+        <nuxt-link to="/about">About</nuxt-link>
+        <nuxt-link to="/photos">Photo</nuxt-link>
+      </div>
+      <div>
+        <nuxt-link to="/login">Login</nuxt-link>
+      </div>
+    </div>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                <a class="nav-link" href="/">หน้าหลัก <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="posts">โพสต์</a>
-                </li>
-                
-            </ul>
-        
-        </div>
-    </nav>
+
+  </div>
 </template>
+<style>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #04AA6D;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
