@@ -11,7 +11,8 @@
     "lint:prettier": "prettier --check .",
     "lint": "npm run lint:js && npm run lint:prettier",
     "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix",
-    "test": "jest"
+    "test": "jest",
+    "git": "git add . & git commit -m 'update' & git push & npm run serve "
   },
   "dependencies": {
     "@nuxt/content": "^1.0.0",
@@ -27,6 +28,7 @@
     "@nuxtjs/eslint-config": "^11.0.0",
     "@nuxtjs/eslint-module": "^3.1.0",
     "@vue/test-utils": "^1.3.0",
+    "autoprefixer": "^10.4.17",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^29.1.2",
     "eslint": "^8.24.0",
@@ -36,7 +38,9 @@
     "eslint-plugin-vue": "^9.5.1",
     "jest": "^29.1.2",
     "jest-environment-jsdom": "^29.1.2",
+    "postcss": "^8.4.35",
     "prettier": "^2.7.1",
+    "tailwindcss": "^3.4.1",
     "vue-jest": "^3.0.4"
   }
 }
