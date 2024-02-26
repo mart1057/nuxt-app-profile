@@ -12,7 +12,7 @@
     "lint": "npm run lint:js && npm run lint:prettier",
     "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix",
     "test": "jest",
-     "git": "git add . & git commit -m 'update' & git push & npm run serve ",
+    "git": "git add . & git commit -m 'update' & git push & npm run serve ",
   },
   "dependencies": {
     "@nuxt/content": "^1.0.0",
