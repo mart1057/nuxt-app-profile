@@ -1,6 +1,8 @@
 export default {
+  serverMiddleware: ['~/api/auth.js'],
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
+    titleTemplate: 'Nuxtjs Workshop | %s',
     title: 'nuxtjs-protfolio',
     htmlAttrs: {
       lang: 'en',
@@ -41,12 +43,35 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/auth-next'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
+    baseURL: 'http://localhost:3000/api',
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            method: 'post',
+            url: 'login',
+            propertyName: 'token',
+          },
+          user: {
+            method: 'get',
+            url: 'me',
+            propertyName: 'user',
+          },
+          logout: false,
+        },
+      },
+    },
+    redirect: {
+      login: '/login',
+    },
   },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content

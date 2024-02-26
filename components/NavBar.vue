@@ -6,15 +6,43 @@
         <nuxt-link to="/blog">Blog</nuxt-link>
         <nuxt-link to="/about">About</nuxt-link>
         <nuxt-link to="/photos">Photo</nuxt-link>
+        <nuxt-link to="/profile">Profile</nuxt-link>
       </div>
       <div>
         <nuxt-link to="/login">Login</nuxt-link>
+      </div>
+      <div v-if="loggedIn" class="buttons">
+        <button @click="logout" class="button is-danger">
+          <strong>Log Out</strong>
+        </button>
       </div>
     </div>
 
 
   </div>
 </template>
+<script>
+import { mapState } from 'vuex'
+
+export default {
+  data() {
+    return {
+      showNav: false,
+    }
+  },
+  methods: {
+    async logout() {
+      await this.$auth.logout()
+
+      this.$router.push('/login')
+    },
+  },
+  computed: {
+    ...mapState('auth', ['loggedIn']),
+  },
+}
+</script>
+
 <style>
 .navbar {
   display: flex;
